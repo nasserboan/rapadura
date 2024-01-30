@@ -3,6 +3,8 @@
 
 ## Terceiro Entregável
 
+![](imgs/datalake.png)
+
 A arquitetura tem três grandes camadas:
 
 1. Fonte de dados: aqui estão todas as fontes de dados que serão utilizadas e conectadas ao nosso datalake incluindo a fonte das notas fiscais (API), outros banco relacionais, sistemas legados (ERP, CRMs etc) e arquivos binários.  
