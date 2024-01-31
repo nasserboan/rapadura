@@ -4,11 +4,11 @@
 
 ## Primeiro Entregável
 
-![Primeiro Entregável](notebooks/entregavel_001_NSB.ipynb)
+[Primeiro Entregável](notebooks/entregavel_001_NSB.ipynb)
 
 ## Segundo Entregável
 
-![Segundo Entregável](notebooks/entregavel_002_NSB.ipynb)
+[Segundo Entregável](notebooks/entregavel_002_NSB.ipynb)
 
 ## Terceiro Entregável
 
