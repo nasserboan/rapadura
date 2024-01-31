@@ -2,9 +2,33 @@
 
 "Olá rapadurinha"
 
+## Primeiro Entregável
+
+![Primeiro Entregável](notebooks/entregavel_001_NSB.ipynb)
+
+## Segundo Entregável
+
+![Segundo Entregável](notebooks/entregavel_002_NSB.ipynb)
+
 ## Terceiro Entregável
 
 ![](imgs/datalake.png)
+
+### Motivação
+
+Informações advindas de notas fiscais são extremamente importantes e precisam ser gerenciadas de forma profissional, consistente e nos seus mais diversos formatos. Elas são alvo de auditoria interna e externa, representam a peça central das transações financeiras de uma empresa, podem ser utilizadas em diversos tipos diferentes de análises, ou seja, podem ser requisitas por times diferentes e para fins diferentes. Por isso, manter a informação mais inalterada possível em uma  camada pode ser de grande valia visto que diversos times podem as solicitar para para entendimento e rotinas de conferência.
+
+Para isso sugeri uma plataforma de dados, capaz de ingerir dados e os manter inalterados em camada "raw", o que foi construído no entregável passado seria utilizado para transformação das notas (coletando as notas em formato .json da camada 'raw' no GCS) e rotina de armazenamento na zona "curated" (utilizando BQ).
+
+A solução proposta é capaz de cumprir uma série de objetivos:
+
+1. Ela é capaz de executar rotinas simples e complexas de ingestão e transformação de dados;
+2. Ela é capaz de armazenar informação inalterada em seus mais diversos formatos (.csv, .xml, .json, imagens e outros arquivos binários);
+3. Ela é capaz de armazenar informação de forma relacional pós-transformação para aplicação em relatórios e análises;
+4. Ela dá poder ao time de negócio para criar suas próprias análsies de forma self-service, sem a preocupação de alterações permanentes na fonte do dados;
+5. Ela possibili
+
+### Estrutura proposta
 
 A arquitetura tem três grandes camadas:
 
@@ -38,101 +62,8 @@ A zona "Curated" possui dados aplicados ao negócio (tabelas de KPIs, cruzamento
 * Tempo de Implementação Reduzido: Permite uma implementação mais rápida de soluções de armazenamento e analise de dados.
 * Acessibilidade: Facilita o acesso a poderosas capacidades de armazenamento e processamento de dados para empresas de todos os tamanhos.
 
+## Observações
 
-## Overview
-
-This is your new Kedro project for the [spaceflights tutorial](https://docs.kedro.org/en/stable/tutorial/spaceflights_tutorial.html) and the extra tutorial sections on [visualisation with Kedro-Viz](https://docs.kedro.org/projects/kedro-viz/en/stable/kedro-viz_visualisation.html) and [experiment tracking with Kedro-Viz](https://docs.kedro.org/projects/kedro-viz/en/stable/experiment_tracking.html), which was generated using `kedro 0.19.2`.
-
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
-
-## Rules and guidelines
-
-In order to get the best out of the template:
-
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a [data engineering convention](https://docs.kedro.org/en/stable/faq/faq.html#what-is-data-engineering-convention)
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
-
-## How to install dependencies
-
-Declare any dependencies in `requirements.txt` for `pip` installation.
-
-To install them, run:
-
-```
-pip install -r requirements.txt
-```
-
-## How to run your Kedro pipeline
-
-You can run your Kedro project with:
-
-```
-kedro run
-```
-
-## How to test your Kedro project
-
-Have a look at the files `src/tests/test_run.py` and `src/tests/pipelines/test_data_science.py` for instructions on how to write your tests. Run the tests as follows:
-
-```
-pytest
-```
-
-To configure the coverage threshold, look at the `.coveragerc` file.
-
-## Project dependencies
-
-To see and update the dependency requirements for your project use `requirements.txt`. Install the project requirements with `pip install -r requirements.txt`.
-
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
-
-## How to work with Kedro and notebooks
-
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `catalog`, `context`, `pipelines` and `session`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r requirements.txt` you will not need to take any extra steps before you use them.
-
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
-```
-
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can use tools like [`nbstripout`](https://github.com/kynan/nbstripout). For example, you can add a hook in `.git/config` with `nbstripout --install`. This will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be retained locally.
-
-[Further information about using notebooks for experiments within Kedro projects](https://docs.kedro.org/en/develop/notebooks_and_ipython/kedro_and_notebooks.html).
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/tutorial/package_a_project.html).
+* Primeiro entregável: com mais tempo seria capaz de testar mais hipóteses quanto a integridade não nulidade dos dados, perfomar análise de dados para encontro de anomalias em distribuições, definir distribuições baseline para definição de drift no futuro e também a utilização de Great Expectations + Kedro para análise automática e recorrente dos dados e criação de relatório.
+* Segundo entregável: com mais tempo teria a capacidade de modularizar o código construído e a rotina para carga no BQ. Além disso, também seria capaz de construir uma análise simples de cesta para identificar padrões de consumo de items (com mais dados) e também construção de relatório.
+* Terceiro entregável: com mais tempo teria a capacidade de pensar em estrutura mais simples e outras opções de arquitetura, dimensionamento de time e também cronograma para desenvolvimento e entrega.
