@@ -1,5 +1,6 @@
 # Gourmet
 
+"Olá rapadurinha"
 
 ## Terceiro Entregável
 
@@ -18,11 +19,25 @@ A zona "Curated" possui dados aplicados ao negócio (tabelas de KPIs, cruzamento
 * Google Data Storage: ambiente para armazenamento de arquivos BLOBs, com capacidade de versionamento de arquivos e também de configuração de rotinas de retenção de informação e prevenção de deleção de arquivos. 
 * Google BigQuery: ferramental utilizado para construção e acesso a bases de dados "quentes" e constantemente utilizados pelo time analítico. Ofere uma interface simples para gestão de bases e editor de queries SQL para trabalhos de exploração. Em casos de bases sem necessidade de acesso constante é recomendado o uso de outras ferramentas (como o próprio Google Cloud Storage e CloudSQL)
 * Data Catalog: ferramental para armazenamento e manutenção de metadados das bases oferecidas em zonas "Raw" e "Curated", oferece uma visualização unificada para pesquisa de dados e também auxilia oferecendo uma gestão de acesso a nível colunar para o BigQuery.
-* Google Stackdriver: 
-* Cloud Identity
-* Vertex AI
-* Looker
+* Google Stackdriver: ferramental utilizado para gerenciamento e análise de logs em tempo real, composto pela junção do cloud monitoring e cloud logging. O cloud logging nos dá a possibilidade de criar métricas baseadas em logs e explorar todos os logs dos serviços habilitados, já o cloud monitoring vai nos dar uma interface simples para dashboards de logs e também um sistema de alarme. 
+* Cloud Identity: o cloud identity já é um serviço habilitado em várias ferramentas citadas acima, ele nos dá a capacidade de gerenciar os usuários com acesso aos serviços da nossa aplicação e garante (se bem configurado) que as pessoas certas terão acesso ao que precisam para construir e manter a infraestrutura construída.
+* Vertex AI: ambiente gerenciado para orquestração de pipelines de treinamento de modelos de machine learning, gerenciamento de versões de modelos (model registry), provisonamento de VMs para utilização de jupyter notebook, disponibilização rápida de modelos através de APIs, ferramentas integradas para detecção de drift e agendamento de retreinamento.   
+* Looker: ferramenta para construção de visualizações, relatórios e dashboards com fácil integração em ambiente web, integração rápida com serviços como BQ e GCS e possui uma biblioteca de conectores padrão que podem ser utilizados para conexão com fontes externas de dados.
 * Outras ferramentas de BI
+
+### Vantagens da estrutura proposta
+
+* Elasticidade Automática: A Capacidade de escalar recursos de forma automática e em tempo real, dependendo da demanda de carga de trabalho.
+* Gestão da Infraestrutura: O GCP gerencia a infraestrutura, incluindo servidores, redes e sistemas operacionais.
+* Modelo de Pagamento por Uso: Os custos são baseados no consumo real de recursos, sem a necessidade de investimento em hardware.
+* Integração com Ferramentas de Análise e BI: Facilidade de integração com ferramentas de Business Inteligence (BI) e análise de Dados
+* Custo-Eficiência: Reduz custos operacionais e de Capital, pois não há necessidade de comprar e manter hardware.
+* Flexibilidade e Excalabilidade: Permite escalar recursos rapidamente para lidar com picos de demanda sem interrupções ou atrasos.
+* Manutenção e Atualizações Automatizadas: A GCP cuida da manutenção e das atualizações, garantindo que o sistema esteja sempre atualizado e seguro.
+* Foco no Uso dos Dados: Os usuários podem se concentrar na análise e no uso dos dados, em vez de se preocuparem com questões de infraestrutura.
+* Tempo de Implementação Reduzido: Permite uma implementação mais rápida de soluções de armazenamento e analise de dados.
+* Acessibilidade: Facilita o acesso a poderosas capacidades de armazenamento e processamento de dados para empresas de todos os tamanhos.
+
 
 ## Overview
 
